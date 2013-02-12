@@ -8,13 +8,21 @@
 
 class User
 
+	@username
+	@password
+
 	def initialize(username, password)
 		@username = username
 		@password = password
 
 	end
 
-	
+	attr_accessor :username, :password
+
+	def to_s
+		"#{username} #{password}."
+	end
+
 
 end
 
