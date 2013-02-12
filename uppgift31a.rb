@@ -10,3 +10,12 @@
 
 # file.close
 
+username = File.open('username.txt').readlines
+
+password = File.open('password.txt').readlines
+
+file.puts "jahaja"
+
+
+
+file.close
