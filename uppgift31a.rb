@@ -10,12 +10,14 @@
 
 # file.close
 
-username = File.open('username.txt').readlines
+username = File.open("Cyban", "a+")
 
-password = File.open('password.txt').readlines
+password = File.open("testarn", "a+")
 
-file.puts "jahaja"
+username.puts
 
+password.puts
 
+username.close
 
-file.close
+password.close
