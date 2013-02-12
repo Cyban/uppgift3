@@ -1,8 +1,18 @@
 # encoding: utf-8
 
-username = File.open("Cyban", "a+")
+puts "Skriv in användarnamn: "
+användarnamn = gets.chomp
 
-password = File.open("testarn", "a+")
+File.open("användarnamn.txt", 'w') { |file| file.write(användarnamn) }
+
+puts "Skriv in lösenord: "
+lösenord = gets.chomp
+
+File.open("lösenord.txt", 'w') { |file| file.write(lösenord) }
+
+username = File.open("användarnamn.txt", "a+")
+
+password = File.open("lösenord.txt", "a+")
 
 username.puts
 
