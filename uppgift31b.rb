@@ -4,17 +4,11 @@
 
 # Returnera en uppräkning (array av objekt eller en hash) som innehåller paren.
 
-# class Username
-
-# def initialize
-
-# def password
-
 # Userobjects -> array
 
 class Username
 
-  def initialize()
+	def initialize()
 
 	end
 
