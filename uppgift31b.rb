@@ -6,16 +6,14 @@
 
 # Userobjects -> array
 
-class Username
+class User
 
-	def initialize()
-
-	end
-
-	def password()
+	def initialize(username, password)
+		@username = username
+		@password = password
 
 	end
 
-
+	
 
 end
