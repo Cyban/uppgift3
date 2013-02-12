@@ -26,8 +26,14 @@ class User
 
 end
 
-user1 = User.new( "Bertil", "abc123" )
-user2 = User.new( "Sture", "123abc" )
+password = File.open("lösenord.txt").readlines
+username = File.open("användarnamn.txt").readlines
 
-puts user1
-puts user2
+print username
+print password
+
+#user1 = User.new( "Bertil -", "abc123" )
+#user2 = User.new( "Sture -", "123abc" )
+
+#puts user1
+#puts user2
