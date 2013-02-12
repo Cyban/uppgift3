@@ -11,3 +11,17 @@
 # def password
 
 # Userobjects -> array
+
+class Username
+
+  def initialize()
+
+	end
+
+	def password()
+
+	end
+
+
+
+end
