@@ -18,5 +18,8 @@ class User
 
 end
 
-user1 = User.new( 'Bertil', 'abc123' )
-user2 = User.new( 'Sture', '123abc' )
+user1 = User.new( "Bertil", "abc123" )
+user2 = User.new( "Sture", "123abc" )
+
+puts user1
+puts user2
