@@ -1,0 +1,14 @@
+# encoding: utf-8
+puts "Skriv in användarnamn: "
+användarnamn = gets.chomp
+puts "Skriv in lösenord: "
+lösenord = gets.chomp
+username = File.open("användarnamn.txt").readlines
+password = File.open("lösenord.txt").readlines
+
+if username.any? { |s| s.include?(användarnamn)}
+  print "Tyvär användarnamnet är för likt ett annat namn."
+	end
+if password.any? { |s| s.include?(lösenord)}
+	print "Tyvär lösenordet är för likt ett annat lösenord."
+	end
