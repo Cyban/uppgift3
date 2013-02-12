@@ -1,0 +1,7 @@
+# encoding: utf-8
+password = File.open("lösenord.txt").readlines
+username = File.open("användarnamn.txt").readlines
+
+
+print username[1] 
+print password[1]
