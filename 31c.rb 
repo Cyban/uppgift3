@@ -7,8 +7,16 @@ username = File.open("användarnamn.txt").readlines
 password = File.open("lösenord.txt").readlines
 
 if username.any? { |s| s.include?(användarnamn)}
-  print "Tyvär användarnamnet är för likt ett annat namn."
+	print "Tyvär användarnamnet är för likt ett annat namn."
+	abort
+	
+	
 	end
 if password.any? { |s| s.include?(lösenord)}
 	print "Tyvär lösenordet är för likt ett annat lösenord."
+	abort
+	
 	end
+	print "Användare skapad"
+	
+	print "Lösenord skapat."
