@@ -5,7 +5,7 @@
 #
 
 class LibraryItem
-  @@previous_id = 0
+	@@previous_id = 0
 
 	def initialize
 	@id = unique_id
@@ -36,26 +36,26 @@ class Book < LibraryItem # vi ärver från klassen LibraryItem
 	super + "Book: #{@title} by #{@author} #{@pages} pages long."
 	end
 
-
-
 end
 
 class Film < LibraryItem
-attr_accessor :title, :director
+	attr_accessor :title, :director, :minutes
 
-def initialize( title = "film title", director = "nn" )
-@title = title
-@director = director
-super()
-end
+	def initialize( title = "film title", director = "nn", minutes = "n" )
+	@title = title
+	@director = director
+	@minutes = minutes
+	super()
+	end
 
-def description
-super + "Film: #{@title} by #{@director}"
-end
+	def description
+	super + "Film: #{@title} by #{@director} #{@minutes} minutes running time."
+	end
+	
 end
 
 book = Book.new( "Neuromancer", "William Gibson", "271" )
-film = Film.new( "Aliens", "James Cameron" )
+film = Film.new( "Aliens", "James Cameron", "137" )
 
 library = [book, film]
 library.each do |item|
