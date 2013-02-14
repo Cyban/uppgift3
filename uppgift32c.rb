@@ -66,7 +66,7 @@ class AudioBook < LibraryItem # vi ärver från klassen LibraryItem
 	end
 
 	def description
-	super + "Book: #{@title} by #{@author} narrated by #{@reader} #{@minutes} minutes running time."
+	super + "Audiobook: #{@title} by #{@author} narrated by #{@reader} #{@minutes} minutes running time."
 	end
 
 end
