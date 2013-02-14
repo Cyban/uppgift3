@@ -1,92 +1,84 @@
 # encoding: utf-8
 
-class Articles
-  @@previous_id = 0
-
-	def initialize
-	@id = unique_id
-	end
-
-	def description
-	"Articles: #{@id}, object_id #{self.object_id}\n "
-	end
-
-	private
-	def unique_id
-	@@previous_id +=1
-	end
+class Artikel
+@@previous_id = 0
+def initialize
+@id = bok_nummer
+end
+def beskrivning
+"Artikel: #{@id}, object_id #{self.object_id}\n "
+end
+private
+def bok_nummer
+@@previous_id +=1
+end
+end
+class Bok < Artikel
+attr_accessor :titel, :författare
+def initialize(titel = "bok titel", författare = "nn")
+@titel = titel
+@författare = författare
+super()
+end
+def beskrivning
+super + "Bok: #{@titel} av #{@författare}"
+end
+end
+class Ljudbok < Artikel
+attr_accessor :titel, :författare
+def initialize( titel = "bok titel", författare = "nn" )
+@titel = titel
+@författare = författare
+super()
+end
+def beskrivning
+super + "Ljudbok: #{@titel} av #{@författare}"
+end
 end
 
-class Book < Articles 
-	attr_accessor :title, :author, :pages
-
-	def initialize( title = "book title", author = "nn", pages = "n")
-	@title = title
-	@author = author
-	@pages = pages
-	super() 
-	end
-
-	def description
-	super + "Book: #{@title} by #{@author} #{@pages} pages long."
-	end
-
+puts "Välkommen"
+puts "Skriv 'artiklar' för att se en lista på alla artiklar i biblioteket."
+puts "Skriv 'låna' för att låna en bok eller ljudbok."
+meny = gets.chomp
+if meny == "artiklar"
+	go to bibliotek
+elsif meny == "låna"
+	go to val
 end
 
-class AudioBook < Articles 
-	attr_accessor :title, :author, :reader, :minutes
+bok1 = Bok.new( "Silmarillion", "J.R.R Tolkien" )
+bok2 = Bok.new( "Across the Nightingale Floor", "Lian Hearn" )
+bok3 = Bok.new( "Brisingr", "Christopher Paolini" )
+ljudbok1 = Ljudbok.new( "A Dance With Dragons", "G.R.R Martin" )
+ljudbok2 = Ljudbok.new( "Inheritance", "Christopher Paolini" )
+ljudbok3 = Ljudbok.new( "Brilliance of the Moon", "Lian Hearn" )
+bibliotek = [bok1, bok2, bok3, ljudbok1, ljudbok2, ljudbok3]
+bibliotek.each do |item|
 
-	def initialize( title = "book title", author = "nn", reader = "nn", minutes = "n" )
-	@title = title
-	@author = author
-	@reader = reader
-	@minutes = minutes
-	super() 
-	end
-
-	def description
-	super + "Audiobook: #{@title} by #{@author} narrated by #{@reader} #{@minutes} minutes running time."
-	end
-
+puts item.beskrivning
 end
-
-book1 = Book.new( "Neuromancer", "William Gibson", "271" )
-book2 = Book.new( "Hej", "Sven", "1337" )
-book3 = Book.new( "Hello", "Mike", "13" )
-abook1 = AudioBook.new( "Suspect", "Robert Crais", "MacLeod Andrews", "510" )
-abook2 = AudioBook.new( "Bu", "Steve", "Lauren", "1012" )
-abook3 = AudioBook.new( "Fuy", "Robert", "Sophie", "833" )
-
-library = [book1, book2, book3, abook1, abook2, abook3]
-library.each do |item|
-puts "#{item.class} is an Article: #{item.is_a?(Articles)}"
-puts item.description
-end
-
-
-=begin
-
-emailadress = File.open("email.txt").readlines
-
-
-puts "Logga in användare"
-choice = gets.chomp
-puts "Lista artiklar i biblioteket"
-choice = gets.chomp
-puts "Låna (ljud)bok i biblioteket"
-choice = gets.chomp
-puts "Sök artiklar i biblioteket"
-choice = gets.chomp
-
-puts "Skriv in email: "
-email = gets.chomp
-
-if email.any? { |e| e.include?(emailadress)}
-print "e"
+puts "Mata in din epost: "
+epost = gets.chomp
+if(epost.include? "@")
+puts "Epost godkänd"
+else
+puts "Ej epost"
 abort
-
 end
-
-puts artiklar
-
-=end
+puts "Välj artikel: "
+val = gets.chomp
+if val == "1"
+print "Silmarillion är nu utlånad."
+elsif val == "2"
+print "Across the Nigtingale Floor är nu utlånad."
+elsif val == "3"
+print "Brisingr är nu utlånad."
+elsif val == "4"
+print "A Dance With Dragons är nu utlånad."
+elsif val == "5"
+print "Inheritance är nu utlånad."
+elsif val == "6"
+print "Brilliance of the Moon är nu utlånad."
+else
+print "Denna artikel finns inte."
+end
