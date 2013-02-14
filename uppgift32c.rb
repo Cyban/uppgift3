@@ -5,7 +5,7 @@
 #
 
 class LibraryItem
-  @@previous_id = 0
+	@@previous_id = 0
 
 	def initialize
 	@id = unique_id
@@ -71,11 +71,11 @@ class AudioBook < LibraryItem # vi ärver från klassen LibraryItem
 
 end
 
-book = Book.new( "Neuromancer", "William Gibson", "271" )
-film = Film.new( "Aliens", "James Cameron", "137" )
-audiobook = AudioBook.new( "Suspect", "Robert Crais", "MacLeod Andrews", "510" )
+book1 = Book.new( "Neuromancer", "William Gibson", "271" )
+film1 = Film.new( "Aliens", "James Cameron", "137" )
+audiobook1 = AudioBook.new( "Suspect", "Robert Crais", "MacLeod Andrews", "510" )
 
-library = [book, film, audiobook]
+library = [book1, film1, audiobook1]
 library.each do |item|
 puts "#{item.class} is a LibraryItem: #{item.is_a?(LibraryItem)}"
 puts item.description
