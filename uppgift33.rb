@@ -39,11 +39,12 @@ end
 puts "Välkommen"
 puts "Skriv 'artiklar' för att se en lista på alla artiklar i biblioteket."
 puts "Skriv 'låna' för att låna en bok eller ljudbok."
-meny = gets.chomp
-if meny == "artiklar"
-	go to bibliotek
-elsif meny == "låna"
-	go to val
+meny = gets.chomp.downcase
+case meny
+	when 'artiklar'
+		title = gets.chomp
+	else
+		puts "Skriv 'artiklar' eller 'låna'."
 end
 
 bok1 = Bok.new( "Silmarillion", "J.R.R Tolkien" )
@@ -55,8 +56,17 @@ ljudbok3 = Ljudbok.new( "Brilliance of the Moon", "Lian Hearn" )
 bibliotek = [bok1, bok2, bok3, ljudbok1, ljudbok2, ljudbok3]
 bibliotek.each do |item|
 
+
+=begin
+when 'låna'
+	title = gets.chomp
+else puts "Skriv 'artiklar' eller 'låna'."
+end
+=end
+
 puts item.beskrivning
 end
+
 puts "Mata in din epost: "
 epost = gets.chomp
 if(epost.include? "@")
